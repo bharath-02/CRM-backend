@@ -1,0 +1,22 @@
+{
+  "name": "crm-backend",
+  "version": "1.0.0",
+  "description": "CRM Backend",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bharath-02/CRM-backend.git"
+  },
+  "author": "Bharath",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bharath-02/CRM-backend/issues"
+  },
+  "homepage": "https://github.com/bharath-02/CRM-backend#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
