@@ -1,8 +1,26 @@
 import express from "express";
+import mongoose from 'mongoose';
+import bodyParser from 'body-parser';
+
 import routes from './src/routes/crmRoutes';
 
 const app = express();
 const PORT = 4000;
+
+// mongoose connection
+const connStr = `mongodb+srv://CRM-admin:Password01@cluster0.9w5vc.mongodb.net/CRM-backend?retryWrites=true&w=majority`;
+mongoose.Promise = global.Promise;
+mongoose.connect(connStr, { useNewUrlParser: true, useUnifiedTopology: true }, (err) => {
+  if(err) {
+    console.log('Error occured while connecting to Database')
+  } else {
+    console.log('Database connected successfully')
+  }
+});
+
+// bodyparser setup
+app.use(bodyParser.urlencoded({ extended: true }))
+app.use(bodyParser.json())
 
 routes(app)
 
