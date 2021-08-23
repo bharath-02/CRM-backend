@@ -1,6 +1,7 @@
 import express from "express";
 import mongoose from 'mongoose';
 import bodyParser from 'body-parser';
+import cors from 'cors';
 
 import routes from './src/routes/crmRoutes';
 
@@ -21,6 +22,9 @@ mongoose.connect(connStr, { useNewUrlParser: true, useUnifiedTopology: true }, (
 // bodyparser setup
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
+
+// cors setup
+app.use(cors())
 
 routes(app)
 
